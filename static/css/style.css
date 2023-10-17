@@ -1,0 +1,45 @@
+/*Reset*/
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body, body.darkmode {
+    transition: 0.3s ease;
+}
+
+/*Box Principais*/
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+header p {
+    user-select: none;
+    font-size: 1.1em;
+}
+
+/*Boxs Secundários*/
+
+.menu {
+    cursor: pointer;
+}
+
+.menu-close {
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+
+    background-color: #202123;
+    color: white;
+
+    position: absolute;
+    transition: 0.3s ease;
+    transform: translate(-140px, 30px);
+}
