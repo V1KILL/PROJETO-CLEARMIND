@@ -1,4 +1,5 @@
 body.darkmode {
     background-color: grey;
     color: white;
+    transition: 0.3 ease;
 }

@@ -1,13 +1,16 @@
 /*Reset*/
 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 * {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
-body, body.darkmode {
+body {
+    background-color: #EAEAEA;
     transition: 0.3s ease;
 }
 
@@ -18,28 +21,196 @@ header {
     padding: 10px;
 }
 
-header p {
+header p#logo {
     user-select: none;
-    font-size: 1.1em;
+    font-weight: bold;
+    color: #33373D;
+    font-size: 1.5em;
 }
 
 /*Boxs Secundários*/
 
 .menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
 }
-
+.menu span {
+    color: #33373D;
+    font-size: 1.5em;
+}
 .menu-close {
     display: none;
     justify-content: center;
     flex-direction: column;
     padding: 20px;
     gap: 20px;
-
-    background-color: #202123;
-    color: white;
-
+    background-color: #33334F;
     position: absolute;
     transition: 0.3s ease;
-    transform: translate(-140px, 30px);
+    transform: translate(-200px, 30px);
+}
+
+.menu-close p {
+    color: white;
+}
+
+.opcoes {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+}
+
+.opcoes span {
+    cursor: pointer;
+    color: #33373D;
+    font-size: 1.5em;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    border: 1px solid black;
+}
+
+.AddListAndTask {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+
+#AddList {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #33334F;
+    color: white;
+    box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.521);
+
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+
+#AddList:hover {
+    animation: flutuar 1.5s infinite;
+}
+
+#AddTask {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    background-color: #33334F;
+    color: white;
+    box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.500);
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: 0.3s ease;
+    border-radius: 10px;
+}
+
+
+#AddTask:hover {
+    animation: flutuar 1.5s infinite;
+}
+
+.Tasks {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    width: 100%;
+    border: 1px solid;
+    box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.500);
+}
+
+#TaskTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 2px solid;
+
+    font-size: 1.1em;
+}
+
+#Resources {
+    display: flex;
+    gap: 10px;
+}
+
+#Resources #Edit, #Info, #Delete, #Check {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid;
+    transition: 0.3s ease;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+#Edit {
+    background-color: #33334F;
+    color: white;
+}
+
+#Edit:hover {
+    background-color: #FEC846;
+    animation: flutuar 1.5s infinite;
+}
+
+#Info {
+    background-color: #33334F;
+    color: white; 
+}
+#Info:hover {
+    background-color: #2E95D3;
+    animation: flutuar 1.5s infinite;
+    color: white; 
+}
+
+#Delete {
+    background-color: #33334F;
+    
+    color: white;
+}
+
+#Delete:hover {
+    animation: flutuar 1.5s infinite;
+    background-color: #991b1b;
+    color: white;
+}
+
+#Check {
+    background-color: #33334F;
+    color: white; 
+}
+
+#Check:hover {
+    animation: flutuar 1.5s infinite;
+    background-color: #19C37D;
+    color: white; 
+}
+
+@keyframes flutuar {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-2px); /* Altere a quantidade de flutuação vertical aqui */
+    }
+    100% {
+        transform: translateY(0);
+    }
 }

@@ -6,7 +6,7 @@ function AtivarMenu() {
         var menu = document.getElementById('menu');
         menu.style.display = 'flex';
         setTimeout(function() {
-            menu.style.left = '150px';
+            menu.style.left = '210px';
         }, 50);
     }
 }
@@ -23,7 +23,7 @@ function DesativarMenu() {
 function ManterMenu () {
     Permissão = 'Não'
     var menu = document.getElementById('menu'); 
-    menu.style.left = '150px';
+    menu.style.left = '210px';
     
 }
 
