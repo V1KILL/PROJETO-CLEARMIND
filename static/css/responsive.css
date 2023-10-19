@@ -1,0 +1,12 @@
+@media screen and (min-width: 720px) and (max-width: 1920px) {
+    section {
+        margin: auto;
+        width: 80%;
+        box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    body.darkmode .Tasks {
+        box-shadow: 0.5px 0.5px 4px rgba(255, 255, 255, 0.5);
+    }
+    /* Adicione outras regras de estilo específicas para tablets aqui */
+}
