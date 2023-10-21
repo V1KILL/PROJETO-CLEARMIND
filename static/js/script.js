@@ -50,3 +50,156 @@ function MudarTema() {
    }
 }
 
+function DeletarTarefa() {
+    Swal.fire({
+        title: '<p style="color: white; font-family: Arial;">Você tem certeza?</p>',
+        html: '<p style="color: grey; font-family: Arial;">Não será possível reverter</p>',
+        
+        iconColor: '#d33',
+        background: '#343541',
+        showCancelButton: true,
+        confirmButtonColor: '#19C37D',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sim, Deletar!',
+        
+        
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: '<p style="color:white; font-family: Arial;">Sucesso!</p>',
+            icon: 'success',
+            iconColor: '#19C37D',
+            background: '#343541',
+            confirmButtonColor: '#19C37D',
+            confirmButtonText: 'Ok',
+            }
+          )
+          setTimeout(() => {
+            
+        }, 1500);
+        }
+      })
+}
+
+function CheckarTarefa() {
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Sucesso!'
+      })
+      
+  }
+
+function DescricaoTarefa() {
+    Swal.fire({
+        title:`<p style="color: white">Detalhes de ''</p>`,
+        html: `<p style="color: grey"></p><p style="color: white">Data: <span style="color: #19C37D"></span></p>`,
+        
+        iconColor: '#19C37D',
+        confirmButtonText: 'Ok',
+        confirmButtonColor: '#19C37D',
+        customClass: {
+            confirmButton: 'custom-confirm-button'
+        },
+        background: '#343541'
+    });
+}
+
+function EditarTarefa() {
+    Swal.fire({
+      title: '<p style="color: white">Editar Título</p>',
+      html:`<input style="color: white; border: 2px solid white" id="titulo" class="swal2-input" value=>`,
+        
+      showCancelButton: true,
+      confirmButtonText: 'Renomear',
+      showLoaderOnConfirm: true,
+      background: '#343541',
+      confirmButtonColor: '#19C37D',
+      cancelButtonColor: '#d33',
+      preConfirm: () => {
+        const titulo = Swal.getPopup().querySelector('#titulo').value;
+        if (titulo.trim() === '') {
+          // Se o novo título for vazio, faça algo
+          // Por exemplo, exiba um alerta ou não redirecione
+          Swal.showValidationMessage('O novo título não pode ser vazio ou conter apenas espaços em branco');
+          return false;
+        } else {
+          // Se o novo título não for vazio, redirecione para a URL
+          window.location.href = ``;
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    });
+}
+
+function AdicionarLista() {
+    Swal.fire({
+      title: '<p style="color:white;">Criar Lista</p>',
+      html:
+        '<input style="color: white; border: 2px solid white;" id="titulo" class="swal2-input" placeholder="Título">' +
+        '<input style="color: white; border: 2px solid white;"  id="descricao" class="swal2-input" placeholder="Descrição">',
+      showCancelButton: true,
+      confirmButtonText: 'Enviar',
+      showLoaderOnConfirm: true,
+      background: '#343541',
+      confirmButtonColor: '#19C37D',
+              
+      preConfirm: () => {
+        const titulo = Swal.getPopup().querySelector('#titulo').value;
+        const descricao = Swal.getPopup().querySelector('#descricao').value;
+        // Aqui você pode fazer algo com os valores, por exemplo, redirecionar para uma URL
+        
+        if (titulo.trim() === '' || descricao.trim() === '') {
+          // Se o novo título for vazio, faça algo
+          // Por exemplo, exiba um alerta ou não redirecione
+          Swal.showValidationMessage('O novo título não pode ser vazio ou conter apenas espaços em branco');
+          return false;
+        } else {
+          // Se o novo título não for vazio, redirecione para a URL
+          window.location.href = `/criarlista/${titulo}/${descricao}`;
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    });
+}
+function AdicionarTarefa() {
+    Swal.fire({
+      title: '<p style="color:white;">Fixar Tarefa</p>',
+      html:
+        '<input style="color: white; border: 2px solid white;" id="titulo" class="swal2-input" placeholder="Título">' +
+        '<input style="color: white; border: 2px solid white;"  id="descricao" class="swal2-input" placeholder="Descrição">',
+      showCancelButton: true,
+      confirmButtonText: 'Enviar',
+      showLoaderOnConfirm: true,
+      background: '#343541',
+      confirmButtonColor: '#19C37D',
+              
+      preConfirm: () => {
+        const titulo = Swal.getPopup().querySelector('#titulo').value;
+        const descricao = Swal.getPopup().querySelector('#descricao').value;
+        // Aqui você pode fazer algo com os valores, por exemplo, redirecionar para uma URL
+        
+        if (titulo.trim() === '' || descricao.trim() === '') {
+          // Se o novo título for vazio, faça algo
+          // Por exemplo, exiba um alerta ou não redirecione
+          Swal.showValidationMessage('O novo título não pode ser vazio ou conter apenas espaços em branco');
+          return false;
+        } else {
+          // Se o novo título não for vazio, redirecione para a URL
+          window.location.href = `/criarlista/${titulo}/${descricao}`;
+        }
+      },
+      allowOutsideClick: () => !Swal.isLoading()
+    });
+}

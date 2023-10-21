@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../static/css/darkmode.css">
     <link rel="stylesheet" href="../static/css/responsive.css">
     <script src="../static/js/script.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
 </head>
 <body>
@@ -32,11 +34,11 @@
     </header>
     <section>
         <div class="AddListAndTask">
-            <div id="AddList">
-                <p>Adicionar Lista</p>
+            <div onclick="AdicionarLista()" id="AddList">
+                <p>Criar Lista</p>
             </div>
-            <div id="AddTask">
-                <p>Adicionar Tarefa</p>
+            <div onclick="AdicionarTarefa()" id="AddTask">
+                <p>Fixar Tarefa</p>
             </div>
         </div>
         <div class="Tasks">
@@ -44,96 +46,21 @@
                 <p>Programar</p>
             </div>
             <div id="Resources">
-                <div id="Edit" title="Editar Tarefa">
+                <div onclick="EditarTarefa()" id="Edit" title="Editar Título">
                     <span class="material-symbols-outlined">edit</span>
                 </div>
-                <div id="Info" title="Descrição e Data De Criação">
+                <div onclick="DescricaoTarefa()" id="Info" title="Descrição e Data De Criação">
                     <span class="material-symbols-outlined">info</span>
                 </div>
-                <div id="Delete" title="Deletar Tarefa">
+                <div onclick="DeletarTarefa()" id="Delete" title="Deletar Tarefa">
                     <span class="material-symbols-outlined">delete</span>
                 </div>
-                <div id="Check" title="Checkar Tarefa">
-                    <span class="material-symbols-outlined">check</span>
-                </div>
-            </div>
-        </div>
-        <div class="Tasks">
-            <div id="TaskTitle">
-                <p>Estudar Inglês</p>
-            </div>
-            <div id="Resources">
-                <div id="Edit" title="Editar Tarefa">
-                    <span class="material-symbols-outlined">edit</span>
-                </div>
-                <div id="Info" title="Descrição e Data De Criação">
-                    <span class="material-symbols-outlined">info</span>
-                </div>
-                <div id="Delete" title="Deletar Tarefa">
-                    <span class="material-symbols-outlined">delete</span>
-                </div>
-                <div id="Check" title="Checkar Tarefa">
-                    <span class="material-symbols-outlined">check</span>
-                </div>
-            </div>
-        </div>
-        <div class="Tasks">
-            <div id="TaskTitle">
-                <p>Ler Livros</p>
-            </div>
-            <div id="Resources">
-                <div id="Edit" title="Editar Tarefa">
-                    <span class="material-symbols-outlined">edit</span>
-                </div>
-                <div id="Info" title="Descrição e Data De Criação">
-                    <span class="material-symbols-outlined">info</span>
-                </div>
-                <div id="Delete" title="Deletar Tarefa">
-                    <span class="material-symbols-outlined">delete</span>
-                </div>
-                <div id="Check" title="Checkar Tarefa">
-                    <span class="material-symbols-outlined">check</span>
-                </div>
-            </div>
-        </div>
-        <div class="Tasks">
-            <div id="TaskTitle">
-                <p>Treinar Karatê</p>
-            </div>
-            <div id="Resources">
-                <div id="Edit" title="Editar Tarefa">
-                    <span class="material-symbols-outlined">edit</span>
-                </div>
-                <div id="Info" title="Descrição e Data De Criação">
-                    <span class="material-symbols-outlined">info</span>
-                </div>
-                <div id="Delete" title="Deletar Tarefa">
-                    <span class="material-symbols-outlined">delete</span>
-                </div>
-                <div id="Check" title="Checkar Tarefa">
-                    <span class="material-symbols-outlined">check</span>
-                </div>
-            </div>
-        </div>
-        <div class="Tasks">
-            <div id="TaskTitle">
-                <p>Meditar por 1 Hora</p>
-            </div>
-            <div id="Resources">
-                <div id="Edit" title="Editar Tarefa">
-                    <span class="material-symbols-outlined">edit</span>
-                </div>
-                <div id="Info" title="Descrição e Data De Criação">
-                    <span class="material-symbols-outlined">info</span>
-                </div>
-                <div id="Delete" title="Deletar Tarefa">
-                    <span class="material-symbols-outlined">delete</span>
-                </div>
-                <div id="Check" title="Checkar Tarefa">
+                <div onclick="CheckarTarefa()" id="Check" title="Checkar Tarefa">
                     <span class="material-symbols-outlined">check</span>
                 </div>
             </div>
         </div>
     </section>
+    
 </body>
 </html>
