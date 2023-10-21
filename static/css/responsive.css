@@ -1,3 +1,5 @@
+/*Aplicativo*/
+
 @media screen and (min-width: 720px) and (max-width: 1920px) {
     section {
         margin: auto;
@@ -8,5 +10,6 @@
     body.darkmode .Tasks {
         box-shadow: 0.5px 0.5px 4px rgba(255, 255, 255, 0.5);
     }
-    /* Adicione outras regras de estilo específicas para tablets aqui */
 }
+
+/*Login e Cadastro*/
