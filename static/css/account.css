@@ -1,5 +1,5 @@
+/*Reset*/
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
 * {
     padding: 0px;
     margin: 0px;
@@ -12,17 +12,17 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #565869;
+    background-color: #ccccce;
 }
-
-section {
+/*Div Principal*/
+section#CandLogin {
     display: flex;
     width: 80%;
     height: 50%;
-    box-shadow: 1px 1px 4px rgba(255, 255, 255, 0.486);
     animation: flutuar 2s infinite;
 }
 
+/*Div Formulário*/
 .form {
     display: flex;
     justify-content: center;
@@ -30,16 +30,18 @@ section {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    
     width: 40%;
-    background-color: #19C17C;
+    background-color: white;
+    border-radius: 20px 0px 0px 20px
 }
 
+/*Título Login*/
 .form h1 {
-    color: white;
+    color: #333333;
     font-size: 2.1em;
 }
 
+/*Formulário*/
 .form form {
     display: flex;
     flex-direction: column;
@@ -47,54 +49,61 @@ section {
     width: 100%;
 }
 
+/*Botão ("Já Possuo uma Conta")*/
 .form form a {
-    color: white;
-    font-weight: 600;
     align-self: flex-end;
+    font-weight: 600;
+    color: #333333;
 }
 
-.form form a:hover {
-    color: #33334F;
-    transition: color 0.3s ease;
-}
-
+/*Inputs*/
 .form form input {
-    padding: 10px;
-    border: none;
     outline: none;
-    border: 2px solid transparent;
+    border: none;
+    padding: 10px;
+    border-bottom: 2px solid black;
     background-color: white;
+    transition: border-color 0.4s ease;
 }
 
-.form form input#submit {
-    font-weight: 500;
+.form form input::placeholder {
     color: grey;
 }
 
-.form form input#submit:hover {
-    color: #33334F;
+/*Input Submit*/
+.form form input#submit {
+    color: white;
+    background-color: #333333;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    transition: 0.4s ease;
 }
 
-.form form input:hover {
-    border: 2px solid #565869;
-    transition: border-color 0.3s ease;
-}
-
+/*Mensagem De Boas Vindas*/
 .Saudação {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     width: 60%;
-    background-color: #33334F;
+    background-image: url(/static/img/pexels-marius-schmidt-3011842.jpg);
+    background-size: cover;
+    background-position: center center;
+    border-radius: 0px 20px 20px 0px;
     color: white;
 }
 
+/*Título (Bem Vindo)*/
 .Saudação h1 {
-    font-size: 1.8em;
+    user-select: none;
+    text-align: center;
+    font-size: 3em;
 }
 
+/*Mensagem Motivacional*/
 .Saudação p {
+    user-select: none;
     font-weight: 600;
 }
 
@@ -107,36 +116,6 @@ section {
     }
     100% {
         transform: translateY(0);
-    }
-}
-
-@media screen and (max-width: 800px) {
-    
-    section {
-        width: 70%;
-        height: 50%;
-    }
-    .Saudação {
-        display: none;
-    }
-
-    .form {
-        width: 100%;
-    }
-}
-
-@media screen and (max-width: 380px) {
-    
-    section {
-        width: 90%;
-        height: 60%;
-    }
-    .Saudação {
-        display: none;
-    }
-
-    .form {
-        width: 100%;
     }
 }
 

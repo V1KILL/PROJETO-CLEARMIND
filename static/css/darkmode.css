@@ -1,58 +1,23 @@
+/*Cor de Fundo*/
 body.darkmode {
     background-color: #565869;
-    color: white;
     transition: 0.3 ease;
 }
 
-body.darkmode section {
+/*Sombra de Cor Banco Para as Divs Principais*/
+body.darkmode section, body.darkmode .Tasks, body.darkmode .menu-close {
+    border: none;
     box-shadow: 0.5px 0.5px 4px rgba(255, 255, 255, 0.5);
-}
-
-body.darkmode .menu-close {
     background-color: #565869;
-    box-shadow: 0.5px 0.5px 4px rgba(255, 255, 255, 0.500);
 }
 
+/*ícones Brancos*/
 body.darkmode #logo, body.darkmode .menu span, body.darkmode .opcoes span, body.darkmode #TaskTitle {
     color: white;
 }
 
-body.darkmode .Tasks {
-    border: none;
-    background-color: #565869;
-    box-shadow: 0.5px 0.5px 4px rgba(255, 255, 255, 0.500);
-}
-
-body.darkmode #AddList, body.darkmode #AddTask {
+/*Configuração dos Ícones*/
+body.darkmode #AddList, body.darkmode #AddTask, body.darkmode #Edit, body.darkmode #Info, body.darkmode #Delete, body.darkmode #Check {
     background-color: white;
     color: #565869;
-}
-
-body.darkmode #AddList:hover, body.darkmode #AddTask:hover {
-    background-color: #19C37D;;
-    color: white;
-}
-
-body.darkmode #Edit, body.darkmode #Info, body.darkmode #Delete, body.darkmode #Check {
-    background-color: white;
-    color: #565869;
-}
-
-body.darkmode #Edit:hover {
-    background-color: #FEC846;
-    color: white;
-}
-
-body.darkmode #Info:hover {
-    color: white;
-    background-color: #2E95D3;
-}
-
-body.darkmode #Delete:hover {
-    background-color: #991b1b;
-    color: white;
-}
-body.darkmode #Check:hover {
-    background-color: #19C37D;
-    color: white;
 }

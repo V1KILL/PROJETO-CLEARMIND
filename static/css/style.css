@@ -1,7 +1,5 @@
 /*Reset*/
-
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
-
 * {
     padding: 0px;
     margin: 0px;
@@ -14,83 +12,91 @@ body {
     transition: 0.3s ease;
 }
 
-/*Box Principais*/
+/*Menu*/
 header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
 }
 
+/*Logo*/
 header p#logo {
     user-select: none;
-    font-weight: bold;
+    font: bold 1.5em sans-serif;
     color: #33373D;
-    font-size: 1.5em;
 }
 
-/*Boxs Secundários*/
-
+/*Configuração do Recurso Menu*/
 .menu {
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
+
+/*Ícone Menu*/
 .menu span {
-    color: #33373D;
     font-size: 1.5em;
+    color: #33373D;
 }
+
+/*Parte Interna do Recurso Menu*/
 .menu-close {
     display: none;
     justify-content: center;
-    
     flex-direction: column;
-    padding: 20px;
     gap: 20px;
-    background-color: #33334F;
+    padding: 20px;
     position: absolute;
-    transition: 0.3s ease;
+    background-color: #33334F;
     transform: translate(-200px, 30px);
+    transition: 0.3s ease;
 }
 
+/*Nome Das Listas Dentro do Menu*/
 .menu-close p {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
-    cursor: pointer;
     gap: 10px;
+    cursor: pointer;
     font-weight: 500;
+    color: white;
 }
 
+/*ícone Delete*/
 .menu-close p span {
     color: #991b1b;
 }
 
+/*Opções Como: Logout and DarkMode*/
 .opcoes {
     display: flex;
     justify-self: center;
     align-items: center;
 }
 
+/*Configuração dos Ícones*/
 .opcoes span {
     cursor: pointer;
-    color: #33373D;
     font-size: 1.5em;
+    color: #33373D;
 }
 
+/*Div Principal*/
 section {
     display: flex;
-    margin: auto;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 20px;
     gap: 10px;
+    padding: 20px;
     width: 95%;
+    margin: auto;
     box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.5);
 }
 
+/*Div Pai dos Botões de Adicionar Listas e Tarefas*/
 .AddListAndTask {
     display: flex;
     justify-content: space-around;
@@ -99,137 +105,73 @@ section {
     width: 100%;
 }
 
+/*Botão de Adicionar Lista*/
 #AddList {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
     cursor: pointer;
-    background-color: #33334F;
     color: white;
-    box-shadow: 0.5px 0.5px 1px rgba(0, 0, 0, 0.521);
-
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: 0.3s ease;
+    font: bold 1.2em sans-serif;
     border-radius: 10px;
+    box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.500);
+    background-color: #33334F;
+    transition: 0.3s ease;
 }
 
-#AddList:hover {
-    background-color: #19C37D;
-    animation: flutuar 1.5s infinite;
-}
-
+/*Botão de Adicionar Tarefa*/
 #AddTask {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
     cursor: pointer;
-    background-color: #33334F;
     color: white;
-    box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.500);
-    font-size: 1.2em;
-    font-weight: bold;
-    transition: 0.3s ease;
+    font: bold 1.2em sans-serif;
     border-radius: 10px;
+    box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.500);
+    background-color: #33334F;
+    transition: 0.3s ease;
 }
 
-
-#AddTask:hover {
-    background-color: #19C37D;
-    animation: flutuar 1.5s infinite;
-}
-
+/*Configuração da Tarefa*/
 .Tasks {
     display: flex;
     justify-content: space-between;
-    
     padding: 10px;
     width: 100%;
     border-bottom: 1px solid;
     box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.500);
-
 }
 
+/*Título da Tarefa*/
 #TaskTitle {
     display: flex;
     align-items: center;
-    
-    font-size: 1.1em;
-    width: 50%;
-    color: #33334F;
     user-select: none;
-    font-weight: 500;
+    width: 50%;
+    font: 500 1.1em sans-serif;
+    color: #33334F;
 }
 
+/*Recursos como: Editar, Descrição, Deletar e Checkar*/
 #Resources {
     display: flex;
     gap: 10px;
 }
 
-#Resources #Edit, #Info, #Delete, #Check {
+#Edit, #Info, #Delete, #Check {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 8px;
+
     border: 1px solid;
-    transition: 0.3s ease;
-    cursor: pointer;
     border-radius: 50%;
-}
-
-#Edit {
     background-color: #33334F;
+
+    cursor: pointer;
     color: white;
-}
-
-#Edit:hover {
-    background-color: #FEC846;
-    animation: flutuar 1.5s infinite;
-}
-
-#Info {
-    background-color: #33334F;
-    color: white; 
-}
-#Info:hover {
-    background-color: #2E95D3;
-    animation: flutuar 1.5s infinite;
-    color: white; 
-}
-
-#Delete {
-    background-color: #33334F;
-    
-    color: white;
-}
-
-#Delete:hover {
-    animation: flutuar 1.5s infinite;
-    background-color: #991b1b;
-    color: white;
-}
-
-#Check {
-    background-color: #33334F;
-    color: white; 
-}
-
-#Check:hover {
-    animation: flutuar 1.5s infinite;
-    background-color: #19C37D;
-    color: white; 
-}
-
-@keyframes flutuar {
-    0% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-2px); /* Altere a quantidade de flutuação vertical aqui */
-    }
-    100% {
-        transform: translateY(0);
-    }
+    transition: 0.3s ease;
 }
