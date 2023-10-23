@@ -77,10 +77,11 @@ header p#logo {
 }
 
 /*Configuração dos Ícones*/
-.opcoes span {
+.opcoes a {
     cursor: pointer;
     font-size: 1.5em;
     color: #33373D;
+    text-decoration: none;
 }
 
 /*Div Principal*/

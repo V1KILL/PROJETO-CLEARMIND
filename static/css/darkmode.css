@@ -12,7 +12,7 @@ body.darkmode section, body.darkmode .Tasks, body.darkmode .menu-close {
 }
 
 /*ícones Brancos*/
-body.darkmode #logo, body.darkmode .menu span, body.darkmode .opcoes span, body.darkmode #TaskTitle {
+body.darkmode #logo, body.darkmode .menu span, body.darkmode .opcoes a, body.darkmode #TaskTitle {
     color: white;
 }
 

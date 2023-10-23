@@ -11,11 +11,13 @@
     }
 }
 
+
 /*Login e Cadastro*/
 
 @media screen and (min-width: 720px) and (max-width: 1920px) {
     section#CandLogin {
         box-shadow: none;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -49,3 +51,4 @@
         width: 100%;
     }
 }
+
