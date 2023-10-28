@@ -22,9 +22,7 @@
     background-color: #991b1b;
 }
 
-#Check:hover {
-    background-color: #19C37D;
-}
+
 
 /*DarMode*/
 body.darkmode #Edit:hover {
@@ -41,6 +39,7 @@ body.darkmode #Delete:hover {
     background-color: #991b1b;
     color: white;
 }
+
 body.darkmode #Check:hover {
     background-color: #19C37D;
     color: white;

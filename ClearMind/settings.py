@@ -74,14 +74,20 @@ WSGI_APPLICATION = 'ClearMind.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+from dotenv import load_dotenv
+
+
+load_dotenv()
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'clearmind',
-        'USER': 'root',
-        'PASSWORD': 'victoramaral123',
-        'HOST': '127.0.0.1', # ou o endereço IP do seu servidor MySQL se estiver em um servidor remoto
-        'PORT': '3306', # porta padrão do MySQL
+        'NAME': os.getenv('DB_NAME'),
+        'USER': os.getenv('DB_USER'),
+        'PASSWORD': os.getenv('DB_PASSWORD'),
+        'HOST': os.getenv('DB_HOST'),
+        'PORT': os.getenv('DB_PORT'),
     }
 }
 

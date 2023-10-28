@@ -41,9 +41,10 @@
                 <p>Fixar Tarefa</p>
             </div>
         </div>
+        {% for tarefa in tarefas %}
         <div class="Tasks">
             <div id="TaskTitle">
-                <p>Programar</p>
+                <p>{{tarefa.titulo}}</p>
             </div>
             <div id="Resources">
                 <div onclick="EditarTarefa()" id="Edit" title="Editar Título">
@@ -55,11 +56,18 @@
                 <div onclick="DeletarTarefa()" id="Delete" title="Deletar Tarefa">
                     <span class="material-symbols-outlined">delete</span>
                 </div>
-                <div onclick="CheckarTarefa()" id="Check" title="Checkar Tarefa">
+                {% if tarefa.status %}
+                <div onclick="CheckarTarefa()" id="Check" title="Checkar Tarefa" style="background-color: #19C37D;">
                     <span class="material-symbols-outlined">check</span>
                 </div>
+                {% else %}
+                <div onclick="CheckarTarefa()" id="Check" title="Checkar Tarefa" style="background-color: #33373d85;">
+                    <span class="material-symbols-outlined">check</span>
+                </div>
+                {% endif %}
             </div>
         </div>
+        {% endfor %}
     </section>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
     <script src="../static/js/script.js"></script>
