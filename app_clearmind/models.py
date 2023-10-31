@@ -14,3 +14,12 @@ class Fixadas(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Listas(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=30)
+    descricao = models.TextField()
+    data = models.CharField(max_length=100, default='')
+
+    def __str__(self):
+        return self.titulo

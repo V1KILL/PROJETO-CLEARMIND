@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Fixadas
+from .models import Fixadas, Listas
 import time
 from datetime import datetime
 # Create your views here.
@@ -9,8 +9,9 @@ from datetime import datetime
 def ViewIndex(request):
     user = request.user
     tarefas = Fixadas.objects.filter(user=user).order_by('-status')
+    listas = Listas.objects.filter(user=user).order_by('-data')
 
-    return render(request, 'index.html', {'tarefas':tarefas})
+    return render(request, 'index.html', {'tarefas':tarefas, 'listas':listas})
 
 def ViewSignUp(request):
     if request.method == 'POST':
@@ -83,5 +84,13 @@ def ViewEditarFixada(request, titulo, id):
     tarefa.titulo = titulo
     tarefa.save()
     
+    url_anterior = request.META.get('HTTP_REFERER')
+    return redirect(url_anterior)
+
+def ViewAdicionarLista(request, titulo, descricao):
+    user = request.user 
+    lista = Listas.objects.create(user=user, titulo=titulo, descricao=descricao, data=(datetime.today().strftime("%A, %B %d, %Y %H:%M:%S")))
+    lista.save()
+
     url_anterior = request.META.get('HTTP_REFERER')
     return redirect(url_anterior)

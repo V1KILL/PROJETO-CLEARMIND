@@ -22,6 +22,10 @@
     background-color: #991b1b;
 }
 
+.menu-close p:hover {
+    color: #19C37D;
+    animation: flutuar 1.5s infinite;
+}
 
 
 /*DarMode*/

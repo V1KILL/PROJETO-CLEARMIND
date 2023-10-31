@@ -14,7 +14,7 @@ function AtivarMenu() {
 function DesativarMenu() {
     if (Permissão == 'Sim') {
         var menu = document.getElementById('menu');
-        menu.style.left = '-10px';
+        menu.style.left = '-110px';
         if (Permissão == 'Não')
             menu.style.display = 'flex';
     }
@@ -29,7 +29,7 @@ function ManterMenu () {
 
 function SairMenu() {
     var menu = document.getElementById('menu'); 
-    menu.style.left = '-10px';
+    menu.style.left = '-110px';
     Permissão = 'Sim'
 }
 
@@ -171,7 +171,7 @@ function AdicionarLista() {
           return false;
         } else {
           // Se o novo título não for vazio, redirecione para a URL
-          window.location.href = `/criarlista/${titulo}/${descricao}`;
+          window.location.href = `/adicionarlista/${titulo}/${descricao}`;
         }
       },
       allowOutsideClick: () => !Swal.isLoading()

@@ -20,8 +20,10 @@
         </div>
         <p id="logo">What's Up?</p>
         <div onmouseover="ManterMenu()" onmouseout="SairMenu()" class="menu-close" id="menu">
-            <p> <span class="material-symbols-outlined">delete</span></p>
-
+            <a href="/">Home</a>
+            {% for lista in listas %}
+            <a>{{lista.titulo}}</a>
+            {% endfor %}
         </div>
         <div class="opcoes">
             <a href="signin" class="material-symbols-outlined">
