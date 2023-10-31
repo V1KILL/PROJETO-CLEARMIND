@@ -50,7 +50,7 @@ function MudarTema() {
    }
 }
 
-function DeletarTarefa() {
+function DeletarFixada(id) {
     Swal.fire({
         title: '<p style="color: white; font-family: Arial;">Você tem certeza?</p>',
         html: '<p style="color: grey; font-family: Arial;">Não será possível reverter</p>',
@@ -75,13 +75,13 @@ function DeletarTarefa() {
             }
           )
           setTimeout(() => {
-            
+            window.location.href = "/deletarfixada/" + id;
         }, 1500);
         }
       })
 }
 
-function CheckarTarefa() {
+function CheckarFixada(id) {
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -99,12 +99,14 @@ function CheckarTarefa() {
         title: 'Sucesso!'
       })
       
+      window.location.href = "/checkarfixada/" + id;
+      
   }
 
-function DescricaoTarefa() {
+function DescricaoFixada(titulo, data, descricao) {
     Swal.fire({
-        title:`<p style="color: white">Detalhes de ''</p>`,
-        html: `<p style="color: grey"></p><p style="color: white">Data: <span style="color: #19C37D"></span></p>`,
+        title:`<p style="color: white">Detalhes de '${titulo}'</p>`,
+        html: `<p style="color: grey">${descricao}</p><p style="color: white">Data: <span style="color: #19C37D">${data}</span></p>`,
         
         iconColor: '#19C37D',
         confirmButtonText: 'Ok',
@@ -116,10 +118,11 @@ function DescricaoTarefa() {
     });
 }
 
-function EditarTarefa() {
+function EditarFixada(id, titulo) {
     Swal.fire({
       title: '<p style="color: white">Editar Título</p>',
-      html:`<input style="color: white; border: 2px solid white" id="titulo" class="swal2-input" value=>`,
+      html:
+        `<input style="color: white; border: 2px solid white;" id="titulo" class="swal2-input" value="${titulo}" autocomplete="off">`,
         
       showCancelButton: true,
       confirmButtonText: 'Renomear',
@@ -129,6 +132,7 @@ function EditarTarefa() {
       cancelButtonColor: '#d33',
       preConfirm: () => {
         const titulo = Swal.getPopup().querySelector('#titulo').value;
+        
         if (titulo.trim() === '') {
           // Se o novo título for vazio, faça algo
           // Por exemplo, exiba um alerta ou não redirecione
@@ -136,7 +140,7 @@ function EditarTarefa() {
           return false;
         } else {
           // Se o novo título não for vazio, redirecione para a URL
-          window.location.href = ``;
+          window.location.href = `/editarfixada/${titulo}/${id}`;
         }
       },
       allowOutsideClick: () => !Swal.isLoading()
@@ -147,8 +151,8 @@ function AdicionarLista() {
     Swal.fire({
       title: '<p style="color:white;">Criar Lista</p>',
       html:
-        '<input style="color: white; border: 2px solid white;" id="titulo" class="swal2-input" placeholder="Título">' +
-        '<input style="color: white; border: 2px solid white;"  id="descricao" class="swal2-input" placeholder="Descrição">',
+        '<input style="color: white; border: 2px solid white;" id="titulo" class="swal2-input" placeholder="Título" autocomplete="off">' +
+        '<input style="color: white; border: 2px solid white;"  id="descricao" class="swal2-input" placeholder="Descrição" autocomplete="off">',
       showCancelButton: true,
       confirmButtonText: 'Enviar',
       showLoaderOnConfirm: true,
@@ -173,12 +177,12 @@ function AdicionarLista() {
       allowOutsideClick: () => !Swal.isLoading()
     });
 }
-function AdicionarTarefa() {
+function AdicionarFixada() {
     Swal.fire({
       title: '<p style="color:white;">Fixar Tarefa</p>',
       html:
-        '<input style="color: white; border: 2px solid white;" id="titulo" class="swal2-input" placeholder="Título">' +
-        '<input style="color: white; border: 2px solid white;"  id="descricao" class="swal2-input" placeholder="Descrição">',
+        '<input style="color: white; border: 2px solid white;" id="titulo" class="swal2-input" placeholder="Título" autocomplete="off">' +
+        '<input style="color: white; border: 2px solid white;"  id="descricao" class="swal2-input" placeholder="Descrição" autocomplete="off">',
       showCancelButton: true,
       confirmButtonText: 'Enviar',
       showLoaderOnConfirm: true,
@@ -197,7 +201,7 @@ function AdicionarTarefa() {
           return false;
         } else {
           // Se o novo título não for vazio, redirecione para a URL
-          window.location.href = `/criarlista/${titulo}/${descricao}`;
+          window.location.href = `/adicionarfixada/${titulo}/${descricao}`;
         }
       },
       allowOutsideClick: () => !Swal.isLoading()

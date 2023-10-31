@@ -37,7 +37,7 @@
             <div onclick="AdicionarLista()" id="AddList">
                 <p>Criar Lista</p>
             </div>
-            <div onclick="AdicionarTarefa()" id="AddTask">
+            <div onclick="AdicionarFixada()" id="AddTask">
                 <p>Fixar Tarefa</p>
             </div>
         </div>
@@ -47,21 +47,21 @@
                 <p>{{tarefa.titulo}}</p>
             </div>
             <div id="Resources">
-                <div onclick="EditarTarefa()" id="Edit" title="Editar Título">
+                <div onclick="EditarFixada('{{tarefa.id}}', '{{tarefa.titulo}}')" id="Edit" title="Editar Título">
                     <span class="material-symbols-outlined">edit</span>
                 </div>
-                <div onclick="DescricaoTarefa()" id="Info" title="Descrição e Data De Criação">
+                <div onclick="DescricaoFixada('{{tarefa.titulo}}', '{{tarefa.data}}', '{{tarefa.descricao}}')" id="Info" title="Descrição e Data De Criação">
                     <span class="material-symbols-outlined">info</span>
                 </div>
-                <div onclick="DeletarTarefa()" id="Delete" title="Deletar Tarefa">
+                <div onclick="DeletarFixada('{{tarefa.id}}')" id="Delete" title="Deletar Tarefa">
                     <span class="material-symbols-outlined">delete</span>
                 </div>
                 {% if tarefa.status %}
-                <div onclick="CheckarTarefa()" id="Check" title="Checkar Tarefa" style="background-color: #19C37D;">
+                <div onclick="CheckarFixada('{{tarefa.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #19C37D;">
                     <span class="material-symbols-outlined">check</span>
                 </div>
                 {% else %}
-                <div onclick="CheckarTarefa()" id="Check" title="Checkar Tarefa" style="background-color: #33373d85;">
+                <div onclick="CheckarFixada('{{tarefa.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #33373d85;">
                     <span class="material-symbols-outlined">check</span>
                 </div>
                 {% endif %}

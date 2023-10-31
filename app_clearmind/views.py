@@ -2,6 +2,8 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from .models import Fixadas
+import time
+from datetime import datetime
 # Create your views here.
 
 def ViewIndex(request):
@@ -45,3 +47,41 @@ def ViewSignin(request):
     else:
 
         return render(request, 'signin.html')
+
+def ViewDeletarFixada(request, id):
+    user = request.user 
+
+    tarefa = Fixadas.objects.get(user=user, id=id)
+    tarefa.delete()
+
+    url_anterior = request.META.get('HTTP_REFERER')
+    return redirect(url_anterior)
+
+def ViewCheckarFixada(request, id):
+    user = request.user
+    tarefa = Fixadas.objects.get(user=user, id=id)
+    tarefa.status = not tarefa.status
+
+    time.sleep(1.8)
+    tarefa.save()
+    
+    url_anterior = request.META.get('HTTP_REFERER')
+    return redirect(url_anterior)
+
+def ViewAdicionarFixada(request, titulo, descricao):
+    user = request.user 
+    tarefa = Fixadas.objects.create(user=user, titulo=titulo, descricao=descricao, data=(datetime.today().strftime("%A, %B %d, %Y %H:%M:%S")))
+    tarefa.save()
+
+    url_anterior = request.META.get('HTTP_REFERER')
+    return redirect(url_anterior)
+
+def ViewEditarFixada(request, titulo, id):
+    user = request.user
+    tarefa = Fixadas.objects.get(user=user, id=id)
+
+    tarefa.titulo = titulo
+    tarefa.save()
+    
+    url_anterior = request.META.get('HTTP_REFERER')
+    return redirect(url_anterior)
