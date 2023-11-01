@@ -18,7 +18,7 @@
         <div class="menu" onmouseover="AtivarMenu()" onmouseout="DesativarMenu()">
             <span class="material-symbols-outlined">menu</span>
         </div>
-        <p id="logo">What's Up?</p>
+        <p id="logo">{{lista_id.titulo}}</p>
         <div onmouseover="ManterMenu()" onmouseout="SairMenu()" class="menu-close" id="menu">
             <a href="/">Home</a>
             {% for lista in listas %}
@@ -36,10 +36,7 @@
     </header>
     <section>
         <div class="AddListAndTask">
-            <div onclick="AdicionarLista()" id="AddList">
-                <p>Criar Lista</p>
-            </div>
-            <div onclick="AdicionarFixada()" id="AddTask">
+            <div onclick="AdicionarFixada('Sim', '{{lista_id.id}}')" id="AddTask">
                 <p>Fixar Tarefa</p>
             </div>
         </div>
@@ -55,21 +52,22 @@
                 <div onclick="DescricaoFixada('{{tarefa.titulo}}', '{{tarefa.data}}', '{{tarefa.descricao}}')" id="Info" title="Descrição e Data De Criação">
                     <span class="material-symbols-outlined">info</span>
                 </div>
-                <div onclick="DeletarFixada('Não', '{{tarefa.id}}', '0', '0')" id="Delete" title="Deletar Tarefa">
+                <div onclick="DeletarFixada('Sim', '0', '{{tarefa.id}}', '{{lista_id.id}}')" id="Delete" title="Deletar Tarefa">
                     <span class="material-symbols-outlined">delete</span>
                 </div>
                 {% if tarefa.status %}
-                <div onclick="CheckarFixada('{{tarefa.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #19C37D;">
+                <div onclick="CheckarFixada('Sim', '0', '{{tarefa.id}}', '{{lista_id.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #19C37D;">
                     <span class="material-symbols-outlined">check</span>
                 </div>
                 {% else %}
-                <div onclick="CheckarFixada('{{tarefa.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #33373d85;">
+                <div onclick="CheckarFixada('Sim', '0', '{{tarefa.id}}', '{{lista_id.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #33373d85;">
                     <span class="material-symbols-outlined">check</span>
                 </div>
                 {% endif %}
             </div>
         </div>
         {% endfor %}
+        
     </section>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
     <script src="../static/js/script.js"></script>

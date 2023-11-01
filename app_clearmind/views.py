@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-from .models import Fixadas, Listas
+from .models import Fixadas, Listas, Tarefas
 import time
 from datetime import datetime
 # Create your views here.
@@ -94,3 +94,48 @@ def ViewAdicionarLista(request, titulo, descricao):
 
     url_anterior = request.META.get('HTTP_REFERER')
     return redirect(url_anterior)
+
+def ViewEntrarLista(request, id):
+
+    user = request.user 
+    listas = Listas.objects.filter(user=user)
+    lista_id = Listas.objects.get(user=user, id=id)
+
+    tarefas = Tarefas.objects.filter(lista=lista_id).order_by('-status')
+
+    return render(request, 'list.html', {'listas':listas,'lista_id':lista_id, 'tarefas':tarefas})
+
+def ViewAdicionarTarefa(request, titulo, descricao, id):
+    user = request.user
+    lista = Listas.objects.get(user=user, id=id)
+
+    tarefa = Tarefas.objects.create(lista=lista, titulo=titulo, descricao=descricao, data=(datetime.today().strftime("%A, %B %d, %Y %H:%M:%S")))
+    tarefa.save()
+
+    url_anterior = request.META.get('HTTP_REFERER')
+    return redirect(url_anterior)
+
+def ViewDeletarTarefa(request, tarefa_id, lista_id):
+    user = request.user
+    lista = Listas.objects.get(user=user, id=lista_id)
+    tarefa = Tarefas.objects.get(lista=lista, id=tarefa_id)
+
+    tarefa.delete()
+    
+    url_anterior = request.META.get('HTTP_REFERER')
+    return redirect(url_anterior)
+
+def ViewCheckarTarefa(request, tarefa_id, lista_id):
+
+    user = request.user
+    lista = Listas.objects.get(user=user, id=lista_id)
+    tarefa = Tarefas.objects.get(lista=lista, id=tarefa_id)
+    tarefa.status = not tarefa.status
+
+    time.sleep(1.8)
+    tarefa.save()
+    
+    url_anterior = request.META.get('HTTP_REFERER')
+    return redirect(url_anterior)
+
+

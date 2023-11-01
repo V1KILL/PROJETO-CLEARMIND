@@ -23,3 +23,13 @@ class Listas(models.Model):
 
     def __str__(self):
         return self.titulo
+
+class Tarefas(models.Model):
+    lista = models.ForeignKey(Listas, on_delete=models.CASCADE)
+    titulo = models.CharField(max_length=30)
+    descricao = models.TextField()
+    status = models.BooleanField(default=False)
+    data = models.CharField(max_length=100, default='')
+
+    def __str__(self):
+        return self.titulo

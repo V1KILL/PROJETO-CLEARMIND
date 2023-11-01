@@ -50,7 +50,8 @@ function MudarTema() {
    }
 }
 
-function DeletarFixada(id) {
+function DeletarFixada(Permissao, id, tid, lid) {
+    
     Swal.fire({
         title: '<p style="color: white; font-family: Arial;">Você tem certeza?</p>',
         html: '<p style="color: grey; font-family: Arial;">Não será possível reverter</p>',
@@ -75,13 +76,18 @@ function DeletarFixada(id) {
             }
           )
           setTimeout(() => {
-            window.location.href = "/deletarfixada/" + id;
+            if (Permissao == 'Sim') {
+              window.location.href = `/deletartarefa/${tid}/${lid}`;
+            }
+            else {
+              window.location.href = `/deletarfixada/${id}`;
+            }
         }, 1500);
         }
       })
 }
 
-function CheckarFixada(id) {
+function CheckarFixada(Permissao, id, tid, lid) {
     const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
@@ -98,8 +104,12 @@ function CheckarFixada(id) {
         icon: 'success',
         title: 'Sucesso!'
       })
-      
-      window.location.href = "/checkarfixada/" + id;
+      if (Permissao == 'Sim') {
+        window.location.href = `/checkartarefa/${tid}/${lid}`;
+      }
+      else {
+        window.location.href = "/checkarfixada/" + id;
+      }
       
   }
 
@@ -177,7 +187,9 @@ function AdicionarLista() {
       allowOutsideClick: () => !Swal.isLoading()
     });
 }
-function AdicionarFixada() {
+function AdicionarFixada(Permissão, id) {
+    i = id
+    p = Permissão
     Swal.fire({
       title: '<p style="color:white;">Fixar Tarefa</p>',
       html:
@@ -201,7 +213,14 @@ function AdicionarFixada() {
           return false;
         } else {
           // Se o novo título não for vazio, redirecione para a URL
-          window.location.href = `/adicionarfixada/${titulo}/${descricao}`;
+          if (p == 'Sim'){
+
+            window.location.href = `/adicionartarefa/${titulo}/${descricao}/` + i;
+          }
+
+          else {
+            window.location.href = `/adicionarfixada/${titulo}/${descricao}`;
+          }
         }
       },
       allowOutsideClick: () => !Swal.isLoading()
