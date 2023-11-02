@@ -18,7 +18,7 @@
         <div class="menu" onmouseover="AtivarMenu()" onmouseout="DesativarMenu()">
             <span class="material-symbols-outlined">menu</span>
         </div>
-        <p id="logo">What's Up?</p>
+        <p id="logo">ClearMind</p>
         <div onmouseover="ManterMenu()" onmouseout="SairMenu()" class="menu-close" id="menu">
             <a href="/">Home</a>
             {% for lista in listas %}
@@ -30,7 +30,7 @@
                 logout
             </a>
             <a onclick="MudarTema()" id="tema" class="material-symbols-outlined">
-                light_mode
+                dark_mode
             </a>
         </div>
     </header>
@@ -49,7 +49,7 @@
                 <p>{{tarefa.titulo}}</p>
             </div>
             <div id="Resources">
-                <div onclick="EditarFixada('{{tarefa.id}}', '{{tarefa.titulo}}')" id="Edit" title="Editar Título">
+                <div onclick="EditarFixada('Não','{{tarefa.id}}','0', '{{tarefa.titulo}}')" id="Edit" title="Editar Título">
                     <span class="material-symbols-outlined">edit</span>
                 </div>
                 <div onclick="DescricaoFixada('{{tarefa.titulo}}', '{{tarefa.data}}', '{{tarefa.descricao}}')" id="Info" title="Descrição e Data De Criação">
@@ -59,11 +59,11 @@
                     <span class="material-symbols-outlined">delete</span>
                 </div>
                 {% if tarefa.status %}
-                <div onclick="CheckarFixada('{{tarefa.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #19C37D;">
+                <div onclick="CheckarFixada('Não', '{{tarefa.id}}', '0', '0')" id="Check" title="Checkar Tarefa" style="background-color: #19C37D;">
                     <span class="material-symbols-outlined">check</span>
                 </div>
                 {% else %}
-                <div onclick="CheckarFixada('{{tarefa.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #33373d85;">
+                <div onclick="CheckarFixada('Não', '{{tarefa.id}}', '0', '0')" id="Check" title="Checkar Tarefa" style="background-color: #33373d85;">
                     <span class="material-symbols-outlined">check</span>
                 </div>
                 {% endif %}

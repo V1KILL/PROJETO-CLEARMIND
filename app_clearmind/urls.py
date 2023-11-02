@@ -20,6 +20,7 @@ from .views import (
     ViewAdicionarTarefa,
     ViewDeletarTarefa,
     ViewCheckarTarefa,
+    ViewEditarTarefa,
 )
 
 
@@ -37,5 +38,6 @@ urlpatterns = [
     path('adicionartarefa/<str:titulo>/<str:descricao>/<int:id>', ViewAdicionarTarefa, name='adicionar-tarefa'),
     path('deletartarefa/<int:tarefa_id>/<int:lista_id>', ViewDeletarTarefa, name='deletar-tarefa'),
     path('checkartarefa/<int:tarefa_id>/<int:lista_id>', ViewCheckarTarefa, name='checkar-tarefa'),
+    path('editartarefa/<int:tarefa_id>/<int:lista_id>/<str:titulo>', ViewEditarTarefa, name='editar-tarefa'),
 
 ]

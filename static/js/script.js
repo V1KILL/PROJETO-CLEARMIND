@@ -49,6 +49,7 @@ function MudarTema() {
         }
    }
 }
+    
 
 function DeletarFixada(Permissao, id, tid, lid) {
     
@@ -128,7 +129,7 @@ function DescricaoFixada(titulo, data, descricao) {
     });
 }
 
-function EditarFixada(id, titulo) {
+function EditarFixada(Permissao, id, lista_id, titulo) {
     Swal.fire({
       title: '<p style="color: white">Editar Título</p>',
       html:
@@ -149,8 +150,13 @@ function EditarFixada(id, titulo) {
           Swal.showValidationMessage('O novo título não pode ser vazio ou conter apenas espaços em branco');
           return false;
         } else {
+          if (Permissao == 'Sim'){
+            window.location.href = `/editartarefa/${id}/${lista_id}/${titulo}`;
+          }
+          else {
+            window.location.href = `/editarfixada/${titulo}/${id}`;
+          }
           // Se o novo título não for vazio, redirecione para a URL
-          window.location.href = `/editarfixada/${titulo}/${id}`;
         }
       },
       allowOutsideClick: () => !Swal.isLoading()

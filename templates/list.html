@@ -46,7 +46,7 @@
                 <p>{{tarefa.titulo}}</p>
             </div>
             <div id="Resources">
-                <div onclick="EditarFixada('{{tarefa.id}}', '{{tarefa.titulo}}')" id="Edit" title="Editar Título">
+                <div onclick="EditarFixada('Sim', '{{tarefa.id}}', '{{lista_id.id}}', '{{tarefa.titulo}}')" id="Edit" title="Editar Título">
                     <span class="material-symbols-outlined">edit</span>
                 </div>
                 <div onclick="DescricaoFixada('{{tarefa.titulo}}', '{{tarefa.data}}', '{{tarefa.descricao}}')" id="Info" title="Descrição e Data De Criação">

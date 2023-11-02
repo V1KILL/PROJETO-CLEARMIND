@@ -138,4 +138,16 @@ def ViewCheckarTarefa(request, tarefa_id, lista_id):
     url_anterior = request.META.get('HTTP_REFERER')
     return redirect(url_anterior)
 
+def ViewEditarTarefa(request, tarefa_id, lista_id, titulo):
+    user = request.user
+    lista = Listas.objects.get(user=user, id=lista_id)
+    tarefa = Tarefas.objects.get(lista=lista, id=tarefa_id)
+
+    tarefa.titulo = titulo
+    tarefa.save()
+    
+    url_anterior = request.META.get('HTTP_REFERER')
+    return redirect(url_anterior)
+
+
 
