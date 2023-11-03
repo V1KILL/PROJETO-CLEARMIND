@@ -49,7 +49,26 @@ function MudarTema() {
         }
    }
 }
+  
+function MostrarLista() {
+    var lista = document.getElementById('lista')
+    var seta = document.getElementById('seta')
     
+
+    if (seta.innerText == 'expand_more') {
+      seta.innerText = 'expand_less'
+      lista.style.display = 'flex'
+      
+    }
+
+    else {
+        if (seta.innerText = 'expand_less') {
+          seta.innerText = 'expand_more'
+          lista.style.display = 'none'
+          
+        }
+    }
+}
 
 function DeletarFixada(Permissao, id, tid, lid) {
     
@@ -193,6 +212,54 @@ function AdicionarLista() {
       allowOutsideClick: () => !Swal.isLoading()
     });
 }
+
+function DeletarLista(id) {
+    
+  Swal.fire({
+      title: '<p style="color: white; font-family: Arial;">Você tem certeza?</p>',
+      html: '<p style="color: grey; font-family: Arial;">Não será possível reverter</p>',
+      
+      iconColor: '#d33',
+      background: '#343541',
+      showCancelButton: true,
+      confirmButtonColor: '#19C37D',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Sim, Deletar!',
+      
+      
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire({
+          title: '<p style="color:white; font-family: Arial;">Sucesso!</p>',
+          icon: 'success',
+          iconColor: '#19C37D',
+          background: '#343541',
+          confirmButtonColor: '#19C37D',
+          confirmButtonText: 'Ok',
+          }
+        )
+        setTimeout(() => {
+          window.location.href = '/deletarlista/'+ id;
+      }, 1500);
+      }
+    })
+}
+
+function DescricaoLista(titulo, data, descricao) {
+  Swal.fire({
+      title:`<p style="color: white">Detalhes de '${titulo}'</p>`,
+      html: `<p style="color: grey">${descricao}</p><p style="color: white">Data: <span style="color: #19C37D">${data}</span></p>`,
+      
+      iconColor: '#19C37D',
+      confirmButtonText: 'Ok',
+      confirmButtonColor: '#19C37D',
+      customClass: {
+          confirmButton: 'custom-confirm-button'
+      },
+      background: '#343541'
+  });
+}
+
 function AdicionarFixada(Permissão, id) {
     i = id
     p = Permissão

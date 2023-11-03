@@ -105,6 +105,13 @@ def ViewEntrarLista(request, id):
 
     return render(request, 'list.html', {'listas':listas,'lista_id':lista_id, 'tarefas':tarefas})
 
+def ViewDeletarLista(request, id):
+    user = request.user 
+    lista = Listas.objects.get(user=user, id=id)
+    lista.delete()
+
+    return redirect('/')
+
 def ViewAdicionarTarefa(request, titulo, descricao, id):
     user = request.user
     lista = Listas.objects.get(user=user, id=id)

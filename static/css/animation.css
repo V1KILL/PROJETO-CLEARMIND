@@ -67,7 +67,10 @@ body.darkmode #AddList:hover, body.darkmode #AddTask:hover {
 .form form input#submit:hover {
     color: white;
     background-color: #19C37D;
+}
 
+#lista {
+    animation: fadeIn 0.2s ease-in-out;
 }
 
 @keyframes flutuar {
@@ -79,5 +82,14 @@ body.darkmode #AddList:hover, body.darkmode #AddTask:hover {
     }
     100% {
         transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
     }
 }

@@ -26,7 +26,7 @@
             {% endfor %}
         </div>
         <div class="opcoes">
-            <a href="signin" class="material-symbols-outlined">
+            <a href="/signin" class="material-symbols-outlined">
                 logout
             </a>
             <a onclick="MudarTema()" id="tema" class="material-symbols-outlined">
@@ -39,6 +39,20 @@
             <div onclick="AdicionarFixada('Sim', '{{lista_id.id}}')" id="AddTask">
                 <p>Fixar Tarefa</p>
             </div>
+            <a onclick="MostrarLista()" id="seta" class="material-symbols-outlined">
+                expand_more
+            </a>
+            <ul id="lista">
+                <div onclick="DeletarLista('{{lista_id.id}}')" id="AddTask">
+                    <p>Deletar</p>
+                </div>
+                <div onclick="DescricaoLista('{{lista_id.titulo}}', '{{lista_id.data}}', '{{lista_id.descricao}}')" id="AddTask">
+                    <p>Verificar</p>
+                </div>
+                <div onclick="EditarLista()" id="AddTask">
+                    <p>Editar</p>
+                </div>
+            </ul>
         </div>
         {% for tarefa in tarefas %}
         <div class="Tasks">
