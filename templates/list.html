@@ -26,7 +26,7 @@
             {% endfor %}
         </div>
         <div class="opcoes">
-            <a href="/signin" class="material-symbols-outlined">
+            <a href="/logout" class="material-symbols-outlined">
                 logout
             </a>
             <a onclick="MudarTema()" id="tema" class="material-symbols-outlined">
@@ -36,7 +36,7 @@
     </header>
     <section>
         <div class="AddListAndTask">
-            <div onclick="AdicionarFixada('Sim', '{{lista_id.id}}')" id="AddTask">
+            <div onclick="AdicionarTarefa('{{lista_id.id}}')" id="AddTask">
                 <p>Fixar Tarefa</p>
             </div>
             <a onclick="MostrarLista()" id="seta" class="material-symbols-outlined">
@@ -49,7 +49,7 @@
                 <div onclick="DescricaoLista('{{lista_id.titulo}}', '{{lista_id.data}}', '{{lista_id.descricao}}')" id="AddTask">
                     <p>Verificar</p>
                 </div>
-                <div onclick="EditarLista()" id="AddTask">
+                <div onclick="EditarLista('{{lista_id.id}}','{{lista_id.titulo}}')" id="AddTask">
                     <p>Editar</p>
                 </div>
             </ul>
@@ -60,21 +60,21 @@
                 <p>{{tarefa.titulo}}</p>
             </div>
             <div id="Resources">
-                <div onclick="EditarFixada('Sim', '{{tarefa.id}}', '{{lista_id.id}}', '{{tarefa.titulo}}')" id="Edit" title="Editar Título">
+                <div onclick="EditarTarefa('{{tarefa.id}}', '{{lista_id.id}}', '{{tarefa.titulo}}')" id="Edit" title="Editar Título">
                     <span class="material-symbols-outlined">edit</span>
                 </div>
-                <div onclick="DescricaoFixada('{{tarefa.titulo}}', '{{tarefa.data}}', '{{tarefa.descricao}}')" id="Info" title="Descrição e Data De Criação">
+                <div onclick="DescricaoTarefa('{{tarefa.titulo}}', '{{tarefa.data}}', '{{tarefa.descricao}}')" id="Info" title="Descrição e Data De Criação">
                     <span class="material-symbols-outlined">info</span>
                 </div>
-                <div onclick="DeletarFixada('Sim', '0', '{{tarefa.id}}', '{{lista_id.id}}')" id="Delete" title="Deletar Tarefa">
+                <div onclick="DeletarTarefa('{{tarefa.id}}', '{{lista_id.id}}')" id="Delete" title="Deletar Tarefa">
                     <span class="material-symbols-outlined">delete</span>
                 </div>
                 {% if tarefa.status %}
-                <div onclick="CheckarFixada('Sim', '0', '{{tarefa.id}}', '{{lista_id.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #19C37D;">
+                <div onclick="CheckarTarefa('{{tarefa.id}}', '{{lista_id.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #19C37D;">
                     <span class="material-symbols-outlined">check</span>
                 </div>
                 {% else %}
-                <div onclick="CheckarFixada('Sim', '0', '{{tarefa.id}}', '{{lista_id.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #33373d85;">
+                <div onclick="CheckarTarefa('{{tarefa.id}}', '{{lista_id.id}}')" id="Check" title="Checkar Tarefa" style="background-color: #33373d85;">
                     <span class="material-symbols-outlined">check</span>
                 </div>
                 {% endif %}
