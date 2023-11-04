@@ -107,6 +107,12 @@ section#CandLogin {
     font-weight: 600;
 }
 
+/*Messages*/
+.messages {
+    color: red;
+    font-size: 0.8em;
+}
+
 @keyframes flutuar {
     0% {
         transform: translateY(0);

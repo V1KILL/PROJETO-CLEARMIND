@@ -184,7 +184,7 @@ section {
     transition: 0.3s ease;
 }
 
-
+/*Opções Extras Da Lista*/
 #lista {
     display: none;
     flex-direction: column;
@@ -194,6 +194,7 @@ section {
     transition: 1.5s;
 }
 
+/*ícone*/
 #seta {
     user-select: none;
 }

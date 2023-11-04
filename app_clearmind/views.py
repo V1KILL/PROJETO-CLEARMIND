@@ -15,7 +15,6 @@ def ViewIndex(request):
 
     return render(request, 'index.html', {'tarefas':tarefas, 'listas':listas})
 
-
 def ViewSignUp(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -24,12 +23,15 @@ def ViewSignUp(request):
 
         if password == password2:
             if User.objects.filter(username=username).exists():
+                messages.info(request, 'Nome Existente')
                 return redirect('signup')
             else:
                 user = User.objects.create_user(username=username, password=password)
                 user.save()
+                messages.info(request, 'Conta Criada com Sucesso')
                 return redirect('signin')
         else:
+            messages.info(request, 'Senhas não coincidem')
             return redirect('signup')
     else:
         return render(request, 'signup.html')
@@ -39,14 +41,17 @@ def ViewSignin(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
-        user = auth.authenticate(username=username, password=password)
+        user = User.objects.filter(username=username).first()
 
-        if user is not None:
+        if user is not None and user.check_password(password):
             auth.login(request, user)
             return redirect('/')
+        elif user is not None and not user.check_password(password):
+            messages.info(request, 'Senha incorreta')
+            return redirect('signin')
         else:
-            messages.info(request, 'Usuário Não Authenticado')
-            return redirect('signup')
+            messages.info(request, 'Usuário Não existe')
+            return redirect('signin')
     else:
         return render(request, 'signin.html')
     

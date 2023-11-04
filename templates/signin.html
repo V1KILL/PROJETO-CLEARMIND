@@ -16,6 +16,9 @@
                 {% csrf_token %}
                 <input type="text" name="username" placeholder="UserName" required minlength="8">
                 <input type="password" name="password" id="" placeholder="PassWord" required minlength="8">
+                {% for message in messages %}
+                <h3 class="messages">{{message}}</h3>
+                {% endfor %}
                 <a href="signup">I Don't Have an Account</a>
                 <input id="submit" type="submit" value="Sign in">
             </form>
