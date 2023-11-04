@@ -39,20 +39,28 @@ function SairMenu() {
 }
 
 function MudarTema() {
-    var moded = document.getElementById('tema')
-    var body = document.body
-    
-    if (moded.innerText == 'light_mode') {
-        body.classList.toggle('darkmode')
-        moded.innerText = 'dark_mode'
-    }
+  var moded = document.getElementById('tema');
+  var body = document.body;
+  var isDarkMode = body.classList.contains('darkmode');
 
-    else {
-        if (moded.innerText == 'dark_mode') {
-            body.classList.toggle('darkmode')
-            moded.innerText = 'light_mode'
-        }
-   }
+  if (isDarkMode) {
+      body.classList.remove('darkmode');
+      moded.innerText = 'dark_mode';
+      localStorage.setItem('dark-mode', 'false');
+  } else {
+      body.classList.add('darkmode');
+      moded.innerText = 'light_mode';
+      localStorage.setItem('dark-mode', 'true');
+  }
+}
+
+const isDarkMode = localStorage.getItem('dark-mode') === 'true';
+
+if (isDarkMode) {
+  document.body.classList.add('darkmode');
+  document.getElementById('tema').innerText = 'light_mode';
+} else {
+  document.getElementById('tema').innerText = 'dark_mode';
 }
   
 function MostrarLista() {

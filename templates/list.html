@@ -30,7 +30,7 @@
                 logout
             </a>
             <a onclick="MudarTema()" id="tema" class="material-symbols-outlined">
-                light_mode
+                dark_mode
             </a>
         </div>
     </header>
@@ -81,7 +81,23 @@
             </div>
         </div>
         {% endfor %}
-        
+        <div class="pagination">
+            <span class="step-links">
+                {% if tarefas.has_previous %}
+                    <a href="?page={{ tarefas.previous_page_number }}"><span class="material-symbols-outlined">chevron_left</span></a>
+                {% endif %}
+                {% if tarefas.number == 1 %}
+                <span class="current">
+                    <span class="current-page"></span>
+                </span>
+                {% else %}
+                <span class="current-page">{{tarefas.number}}</span>
+                {% endif %}
+                {% if tarefas.has_next %}
+                    <a href="?page={{ tarefas.next_page_number }}"><span class="material-symbols-outlined">chevron_right</span></a>
+                {% endif %}
+            </span>
+        </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.27/dist/sweetalert2.all.min.js"></script>
     <script src="../static/js/script.js"></script>

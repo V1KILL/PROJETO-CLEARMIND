@@ -21,3 +21,18 @@ body.darkmode #AddList, body.darkmode #AddTask, body.darkmode #Edit, body.darkmo
     background-color: white;
     color: #565869;
 }
+
+/*Pagination*/
+body.darkmode .pagination a {
+    color: white;
+}
+
+body.darkmode .current-page {
+    color: white;
+    font-weight: 600;
+}
+
+body.darkmode #seta {
+    color: white;
+    font-weight: 600;
+}

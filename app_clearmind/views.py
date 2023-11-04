@@ -6,12 +6,17 @@ from django.contrib import messages
 from .models import Fixadas, Listas, Tarefas
 import time
 from datetime import datetime
+from django.core.paginator import Paginator
 # Create your views here.
 @login_required(login_url='/signin')
 def ViewIndex(request):
     user = request.user
     tarefas = Fixadas.objects.filter(user=user).order_by('-status')
     listas = Listas.objects.filter(user=user).order_by('-data')
+
+    paginator = Paginator(tarefas, 3)
+    page_number = request.GET.get('page')
+    tarefas = paginator.get_page(page_number)
 
     return render(request, 'index.html', {'tarefas':tarefas, 'listas':listas})
 
@@ -114,6 +119,10 @@ def ViewEntrarLista(request, id):
     listas = Listas.objects.filter(user=user)
     lista_id = Listas.objects.get(user=user, id=id)
     tarefas = Tarefas.objects.filter(lista=lista_id).order_by('-status')
+
+    paginator = Paginator(tarefas, 3)
+    page_number = request.GET.get('page')
+    tarefas = paginator.get_page(page_number)
 
     return render(request, 'list.html', {'listas':listas,'lista_id':lista_id, 'tarefas':tarefas})
 

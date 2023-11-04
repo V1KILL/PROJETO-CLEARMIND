@@ -118,7 +118,7 @@ section#CandLogin {
         transform: translateY(0);
     }
     50% {
-        transform: translateY(-2px); /* Altere a quantidade de flutuação vertical aqui */
+        transform: translateY(-2px);
     }
     100% {
         transform: translateY(0);

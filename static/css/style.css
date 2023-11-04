@@ -16,7 +16,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
-    padding: 10px;
+    padding: 20px;
 }
 
 /*Logo*/
@@ -53,6 +53,7 @@ header p#logo {
     transform: translate(-200px, 30px);
     transition: 0.3s ease;
     box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.5);
+    z-index: 1;
 }
 
 /*Nome Das Listas Dentro do Menu*/
@@ -97,6 +98,7 @@ section {
     width: 95%;
     margin: auto;
     box-shadow: 0.5px 0.5px 4px rgba(0, 0, 0, 0.5);
+    position: relative;
 }
 
 /*Div Pai dos Botões de Adicionar Listas e Tarefas*/
@@ -197,4 +199,18 @@ section {
 /*ícone*/
 #seta {
     user-select: none;
+}
+
+/*Pagination*/
+.pagination {
+    padding-top: 15px;
+}
+
+.step-links {
+    display: flex;
+    justify-content: center;
+}
+
+.pagination a {  
+    color: #33334F;
 }
