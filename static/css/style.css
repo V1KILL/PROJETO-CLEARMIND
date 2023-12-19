@@ -160,6 +160,7 @@ section {
     display: flex;
     align-items: center;
     user-select: none;
+    word-break: break-all;
     width: 50%;
     font: 500 1.1em sans-serif;
     color: #33334F;
@@ -168,6 +169,7 @@ section {
 /*Recursos como: Editar, Descrição, Deletar e Checkar*/
 #Resources {
     display: flex;
+    height: 50%;
     gap: 10px;
 }
 

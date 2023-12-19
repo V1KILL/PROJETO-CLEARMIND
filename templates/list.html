@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ClearMind</title>
+    <title>{{lista_id.titulo}}</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'css/darkmode.css' %}">
     <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
@@ -47,7 +47,7 @@
                     <p>Deletar</p>
                 </div>
                 <div onclick="DescricaoLista('{{lista_id.titulo}}', '{{lista_id.data}}', '{{lista_id.descricao}}')" id="AddTask">
-                    <p>Verificar</p>
+                    <p>Detalhes</p>
                 </div>
                 <div onclick="EditarLista('{{lista_id.id}}','{{lista_id.titulo}}')" id="AddTask">
                     <p>Editar</p>

@@ -14,7 +14,7 @@ def ViewIndex(request):
     tarefas = Fixadas.objects.filter(user=user).order_by('-status')
     listas = Listas.objects.filter(user=user).order_by('-data')
 
-    paginator = Paginator(tarefas, 3)
+    paginator = Paginator(tarefas, 5)
     page_number = request.GET.get('page')
     tarefas = paginator.get_page(page_number)
 
@@ -120,7 +120,7 @@ def ViewEntrarLista(request, id):
     lista_id = Listas.objects.get(user=user, id=id)
     tarefas = Tarefas.objects.filter(lista=lista_id).order_by('-status')
 
-    paginator = Paginator(tarefas, 3)
+    paginator = Paginator(tarefas, 5)
     page_number = request.GET.get('page')
     tarefas = paginator.get_page(page_number)
 

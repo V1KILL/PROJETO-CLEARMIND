@@ -30,9 +30,9 @@ section#CandLogin {
     flex-direction: column;
     gap: 20px;
     padding: 20px;
-    width: 40%;
+    width: 100%;
     background-color: white;
-    border-radius: 20px 0px 0px 20px
+    border-radius: 8px
 }
 
 /*Título Login*/
@@ -80,36 +80,9 @@ section#CandLogin {
     transition: 0.4s ease;
 }
 
-/*Mensagem De Boas Vindas*/
-.Saudação {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    width: 60%;
-    background-image: url(/static/img/1.jpg);
-    background-size: cover;
-    background-position: center center;
-    border-radius: 0px 20px 20px 0px;
-    color: white;
-}
-
-/*Título (Bem Vindo)*/
-.Saudação h1 {
-    user-select: none;
-    text-align: center;
-    font-size: 3em;
-}
-
-/*Mensagem Motivacional*/
-.Saudação p {
-    user-select: none;
-    font-weight: 600;
-}
-
 /*Messages*/
 .messages {
-    color: red;
+    color: #19C37D;
     font-size: 0.8em;
 }
 

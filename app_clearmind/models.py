@@ -7,7 +7,7 @@ from datetime import datetime
 
 class Fixadas(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    titulo = models.CharField(max_length=20)
+    titulo = models.CharField(max_length=250)
     descricao = models.TextField()
     status = models.BooleanField(default=False)
     data = models.CharField(max_length=100, default='')

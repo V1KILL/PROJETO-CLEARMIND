@@ -18,7 +18,7 @@
         <div class="menu" onmouseover="AtivarMenu()" onmouseout="DesativarMenu()">
             <span class="material-symbols-outlined">menu</span>
         </div>
-        <p id="logo">ClearMind</p>
+        <p id="logo">Hello, {{request.user}}!</p>
         <div onmouseover="ManterMenu()" onmouseout="SairMenu()" class="menu-close" id="menu">
             <a href="/">Home</a>
             {% for lista in listas %}
