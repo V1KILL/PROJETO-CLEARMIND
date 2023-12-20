@@ -1,9 +1,9 @@
 
 # ClearMind
 
-O Clearmind é inspirado no maior aplicativo de produtividade de todos os tempos nomeado como Notion.
+O ClearMind, inspirado no amplamente reconhecido aplicativo Notion, tem como objetivo simplificar o processo de definição de metas a curto e longo prazo.
 
-O objetivo do ClearMind é fazer com que você defina suas metas de curto e longo prazo de forma clara e objetiva com um visual fácil de entender
+Com uma interface visual intuitiva, buscamos proporcionar uma experiência clara e objetiva para ajudar você a alcançar seus objetivos diários com facilidade
 
 ## Links
 
@@ -17,9 +17,40 @@ O objetivo do ClearMind é fazer com que você defina suas metas de curto e long
 
 ![Web 1](../PROJETO-LISTA-DE-TAREFAS/assets/layoutlistdark.png)
 
-## Conceptual Model
+## Modelo Conceitual
 
-![Conceptual Model](link_image_conceptual_model)
+![Conceptual Model](../PROJETO-LISTA-DE-TAREFAS/assets/diagramamodel.png)
+
+## Arquitetura
+
+![Web 1](../PROJETO-LISTA-DE-TAREFAS/assets/diagrama.drawio.png)
+
+## Funcionalidades
+
+### Authenticação
+
+- Account Login
+- Account Register
+
+### Colors Mode
+
+- LightMode
+- DarkMode
+
+### Tarefa
+
+- Adição de Tarefa
+- Editar Tarefa
+- Visulizar Detalhes Da Tarefa
+- Remover Tarefa
+- Checkar Tarefa
+
+### Lista
+
+- Adição de Lista
+- Editar Lista
+- Visulizar Detalhes Da Lista
+- Remover Lista
 
 ## Tecnologias Usadas
 
