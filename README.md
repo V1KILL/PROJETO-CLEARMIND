@@ -1,58 +1,61 @@
-
 # ClearMind
 
-O ClearMind, inspirado no amplamente reconhecido aplicativo Notion, tem como objetivo simplificar o processo de definição de metas a curto e longo prazo.
+![Status](https://img.shields.io/badge/STATUS-FINISHED-44CC11)
+![Date](https://img.shields.io/badge/RELEASEDATE-DECEMBER-44CC11)
+![License](https://img.shields.io/badge/LICENSE-MTI-44CC11)
 
-Com uma interface visual intuitiva, buscamos proporcionar uma experiência clara e objetiva para ajudar você a alcançar seus objetivos diários com facilidade
+ClearMind, inspired by the widely recognized Notion app, aims to simplify the process of setting short and long-term goals.
+
+With an intuitive visual interface, we seek to provide a clear and objective experience to help you achieve your daily goals with ease, and it's Especially reccomended to create a daily routine in your life
 
 ## Links
 
-- [Projeto]()
+- [Project]()
 
-## Layout Home
+## Home Layout
 
-![Web 1](../PROJETO-LISTA-DE-TAREFAS/assets/layoutwebhome.png)
+![Home Layout](./assets/layoutwebhome.png)
 
-## Layout List
+## List Layout
 
-![Web 1](../PROJETO-LISTA-DE-TAREFAS/assets/layoutlistdark.png)
+![List Layout](./assets/layoutlistdark.png)
 
-## Modelo Conceitual
+## Conceptual Model
 
-![Conceptual Model](../PROJETO-LISTA-DE-TAREFAS/assets/diagramamodel.png)
+![Conceptual Model](./assets/diagramamodel.png)
 
-## Arquitetura
+## Architecture
 
-![Web 1](../PROJETO-LISTA-DE-TAREFAS/assets/diagrama.drawio.png)
+![Architecture](./assets/diagrama.drawio.png)
 
-## Funcionalidades
+## Features
 
-### Authenticação
+### Authentication
 
-- Account Login
-- Account Register
+- **Account Login:** Allows users to authenticate in the application.
+- **Account Register:** Enables new users to create an account.
 
 ### Colors Mode
 
-- LightMode
-- DarkMode
+- **LightMode:** Interface with Light Background.
+- **DarkMode:** Interface with Dark Background.
 
-### Tarefa
+### Task
 
-- Adição de Tarefa
-- Editar Tarefa
-- Visulizar Detalhes Da Tarefa
-- Remover Tarefa
-- Checkar Tarefa
+- **Add Task:** Allows users to create new tasks.
+- **Edit Task:** Allows modification of the title and description of a task.
+- **View Task Details:** Provides a detailed view of the information for a specific task.
+- **Remove Task:** Allows the deletion of no longer necessary tasks.
+- **Check Task:** Allows marking a task as completed or not completed.
 
-### Lista
+### List
 
-- Adição de Lista
-- Editar Lista
-- Visulizar Detalhes Da Lista
-- Remover Lista
+- **Add List:** Enables users to create new lists.
+- **Edit List:** Allows modification of the title and description of a list.
+- **View List Details:** Offers a detailed view of the information for a specific list.
+- **Remove List:** Allows the deletion of no longer necessary lists.
 
-## Tecnologias Usadas
+## Technologies Used
 
 ### Back-End
 - Python
@@ -60,34 +63,38 @@ Com uma interface visual intuitiva, buscamos proporcionar uma experiência clara
 - JavaScript
 
 ### Front-End
-- Html
-- Html
-- Css
+- HTML
+- CSS
+- JavaScript
 
 ### Deploy
-- Back-End: Glicth
-- Front-End: FireBase
-- Database: MySql
-## Como Iniciar o Projeto
+- Back-End: Glitch
+- Front-End: Firebase
+- Database: MySQL
 
-#### Pré-Requisito
+## Run Project
+
+#### Prerequisite
 - Python 3.11
 
 ```bash
-# Clonar Repositório
+
+# Clone Repository
 git clone https://github.com/V1KILL/PROJETO-LISTA-DE-TAREFAS.git
 
-# Ativar Ambiente Virtual 
+# Activate Virtual Environment
 .\venv\Scripts\activate
 
-# Ativar Ambiente Virtual No Linux
+# Activate Virtual Environment (Linux)
 source venv/bin/activate
 
-# Instalar Dependências
+# Install Dependencies
 pip install -r requirements.txt
 
-#Aplicar Migrações
+# Apply Migrations
 python manage.py migrate
 
-# Iniciar o Servidor
+# Start the Server
 python manage.py runserver
+
+```
