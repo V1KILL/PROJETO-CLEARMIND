@@ -28,6 +28,15 @@ With an intuitive visual interface, we seek to provide a clear and objective exp
 
 ![Architecture](./assets/diagrama.drawio.png)
 
+## Videos
+
+### Home
+https://github.com/V1KILL/PROJETO-LISTA-DE-TAREFAS/assets/105511964/c0a8f3e7-66ef-4237-a19b-c648b9a9fc61
+
+### List
+
+https://github.com/V1KILL/PROJETO-LISTA-DE-TAREFAS/assets/105511964/d012a4b4-8d63-4c2d-8c9f-93df22b6eb69
+
 ## Features
 
 ### Authentication
