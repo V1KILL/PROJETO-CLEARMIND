@@ -77,9 +77,9 @@ https://github.com/V1KILL/PROJETO-LISTA-DE-TAREFAS/assets/105511964/d012a4b4-8d6
 - JavaScript
 
 ### Deploy
-- Back-End: Glitch
-- Front-End: Firebase
-- Database: MySQL
+- Back-End: PythonAnyWhere
+- Front-End: PythonAnyWhere
+- Database: MySql/PythonAnyWhere
 
 ## Run Project
 
