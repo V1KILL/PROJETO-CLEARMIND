@@ -6,6 +6,7 @@ from .views import (
     ViewSignUp,
     ViewSignin,
     ViewLogout,
+    ViewRecruiter,
 )
 
 from .views import (
@@ -29,6 +30,7 @@ from .views import (
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', ViewIndex, name='index'),
+    path('recruiter', ViewRecruiter, name='recruiter'),
     path('signup', ViewSignUp, name='signup'),
     path('signin', ViewSignin, name='signin'),
     path('logout', ViewLogout, name='logout'),

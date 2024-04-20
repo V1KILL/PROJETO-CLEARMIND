@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
-from django.contrib.auth import logout
+from django.contrib.auth import logout, authenticate, login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .models import Fixadas, Listas, Tarefas
@@ -10,6 +10,7 @@ from django.core.paginator import Paginator
 # Create your views here.
 @login_required(login_url='/signin')
 def ViewIndex(request):
+    
     user = request.user
     tarefas = Fixadas.objects.filter(user=user).order_by('-status')
     listas = Listas.objects.filter(user=user).order_by('-data')
@@ -20,7 +21,17 @@ def ViewIndex(request):
 
     return render(request, 'index.html', {'tarefas':tarefas, 'listas':listas})
 
+def ViewRecruiter(request):
+
+    user = authenticate(username='Recrutador', password='clearmind369')
+    if user is not None:
+        login(request, user)
+        return redirect('/')
+    else:
+        return redirect('signin')
+
 def ViewSignUp(request):
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -43,6 +54,7 @@ def ViewSignUp(request):
 
 
 def ViewSignin(request):
+
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
@@ -67,6 +79,7 @@ def ViewLogout(request):
 
 @login_required(login_url='/signin')
 def ViewDeletarFixada(request, id):
+
     user = request.user
     tarefa = Fixadas.objects.get(user=user, id=id)
     tarefa.delete()
@@ -76,6 +89,7 @@ def ViewDeletarFixada(request, id):
 
 @login_required(login_url='/signin')
 def ViewCheckarFixada(request, id):
+
     user = request.user
     tarefa = Fixadas.objects.get(user=user, id=id)
     tarefa.status = not tarefa.status
@@ -87,6 +101,7 @@ def ViewCheckarFixada(request, id):
 
 @login_required(login_url='/signin')
 def ViewAdicionarFixada(request, titulo, descricao):
+
     user = request.user 
     tarefa = Fixadas.objects.create(user=user, titulo=titulo, descricao=descricao, data=(datetime.today().strftime("%A, %B %d, %Y %H:%M:%S")))
     tarefa.save()
@@ -96,6 +111,7 @@ def ViewAdicionarFixada(request, titulo, descricao):
 
 @login_required(login_url='/signin')
 def ViewEditarFixada(request, titulo, id):
+
     user = request.user
     tarefa = Fixadas.objects.get(user=user, id=id)
     tarefa.titulo = titulo
@@ -106,6 +122,7 @@ def ViewEditarFixada(request, titulo, id):
 
 @login_required(login_url='/signin')
 def ViewAdicionarLista(request, titulo, descricao):
+
     user = request.user 
     lista = Listas.objects.create(user=user, titulo=titulo, descricao=descricao, data=(datetime.today().strftime("%A, %B %d, %Y %H:%M:%S")))
     lista.save()
@@ -115,6 +132,7 @@ def ViewAdicionarLista(request, titulo, descricao):
 
 @login_required(login_url='/signin')
 def ViewEntrarLista(request, id):
+
     user = request.user 
     listas = Listas.objects.filter(user=user)
     lista_id = Listas.objects.get(user=user, id=id)
@@ -128,6 +146,7 @@ def ViewEntrarLista(request, id):
 
 @login_required(login_url='/signin')
 def ViewDeletarLista(request, id):
+
     user = request.user 
     lista = Listas.objects.get(user=user, id=id)
     lista.delete()
@@ -136,6 +155,7 @@ def ViewDeletarLista(request, id):
 
 @login_required(login_url='/signin')
 def ViewEditarLista(request, id, titulo):
+
     user = request.user
     lista = Listas.objects.get(user=user, id=id)
     lista.titulo = titulo
@@ -146,6 +166,7 @@ def ViewEditarLista(request, id, titulo):
 
 @login_required(login_url='/signin')
 def ViewAdicionarTarefa(request, titulo, descricao, id):
+
     user = request.user
     lista = Listas.objects.get(user=user, id=id)
     tarefa = Tarefas.objects.create(lista=lista, titulo=titulo, descricao=descricao, data=(datetime.today().strftime("%A, %B %d, %Y %H:%M:%S")))
@@ -156,6 +177,7 @@ def ViewAdicionarTarefa(request, titulo, descricao, id):
 
 @login_required(login_url='/signin')
 def ViewDeletarTarefa(request, tarefa_id, lista_id):
+
     user = request.user
     lista = Listas.objects.get(user=user, id=lista_id)
     tarefa = Tarefas.objects.get(lista=lista, id=tarefa_id)
@@ -166,6 +188,7 @@ def ViewDeletarTarefa(request, tarefa_id, lista_id):
 
 @login_required(login_url='/signin')
 def ViewCheckarTarefa(request, tarefa_id, lista_id):
+
     user = request.user
     lista = Listas.objects.get(user=user, id=lista_id)
     tarefa = Tarefas.objects.get(lista=lista, id=tarefa_id)
@@ -178,6 +201,7 @@ def ViewCheckarTarefa(request, tarefa_id, lista_id):
 
 @login_required(login_url='/signin')
 def ViewEditarTarefa(request, tarefa_id, lista_id, titulo):
+
     user = request.user
     lista = Listas.objects.get(user=user, id=lista_id)
     tarefa = Tarefas.objects.get(lista=lista, id=tarefa_id)
