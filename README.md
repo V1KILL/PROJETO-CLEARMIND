@@ -89,7 +89,7 @@ https://github.com/V1KILL/PROJETO-LISTA-DE-TAREFAS/assets/105511964/d012a4b4-8d6
 ```bash
 
 # Clone Repository
-git clone https://github.com/V1KILL/PROJETO-LISTA-DE-TAREFAS.git
+git clone https://github.com/V1KILL/PROJETO-CLEARMIND.git
 
 # Activate Virtual Environment
 .\venv\Scripts\activate
