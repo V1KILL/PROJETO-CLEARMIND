@@ -2,12 +2,12 @@
     animation: flutuar 1.5s infinite;
 }
 
-#AddTask:hover {
-    background-color: #19C37D;
+#AddTask:hover, #AddList:hover {
+    background-color: #44B78B;
 }
 
 #AddList:hover {
-    background-color: #19C37D;
+    background-color: #44B78B;
 }
 
 #Edit:hover {
@@ -23,10 +23,9 @@
 }
 
 .menu-close p:hover {
-    color: #19C37D;
+    color: #44B78B;
     animation: flutuar 1.5s infinite;
 }
-
 
 /*DarMode*/
 body.darkmode #Edit:hover {
@@ -50,23 +49,24 @@ body.darkmode #Check:hover {
 }
 
 body.darkmode #AddList:hover, body.darkmode #AddTask:hover {
-    background-color: #19C37D;
+    background-color: #44B78B;
     color: white;
 }
 
 /*Login and Cadastro*/
 .form form input:hover {
-    border-bottom: 2px solid #19C37D;
+    border-bottom: 2px solid #44B78B;
 }
 
 .form form a:hover {
-    color: #19C37D;
+    color: #44B78B;
     transition: color 0.3s ease;
 }
 
 .form form input#submit:hover {
     color: white;
-    background-color: #19C37D;
+    background-color: #44B78B;
+    cursor: pointer;
 }
 
 #lista {

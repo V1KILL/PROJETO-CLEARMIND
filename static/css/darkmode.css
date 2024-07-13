@@ -1,6 +1,6 @@
 /*Cor de Fundo*/
 body.darkmode {
-    background-color: #565869;
+    background-color: #121212;
     transition: 0.3 ease;
 }
 
@@ -8,7 +8,7 @@ body.darkmode {
 body.darkmode section, body.darkmode .Tasks, body.darkmode .menu-close {
     border: none;
     box-shadow: 0.5px 0.5px 4px rgba(255, 255, 255, 0.5);
-    background-color: #565869;
+    background-color: #121212;
 }
 
 /*ícones Brancos*/
@@ -17,9 +17,9 @@ body.darkmode #logo, body.darkmode .menu span, body.darkmode .opcoes a, body.dar
 }
 
 /*Configuração dos Ícones*/
-body.darkmode #AddList, body.darkmode #AddTask, body.darkmode #Edit, body.darkmode #Info, body.darkmode #Delete, body.darkmode #Check {
+body.darkmode #AddList, body.darkmode #AddTask, body.darkmode #Edit, body.darkmode #Info, body.darkmode #Delete {
     background-color: white;
-    color: #565869;
+    color: #121212;
 }
 
 /*Pagination*/

@@ -90,8 +90,11 @@ function AdicionarLista() {
       showCancelButton: true,
       confirmButtonText: 'Enviar',
       showLoaderOnConfirm: true,
-      background: '#343541',
+      background: '#121212',
       confirmButtonColor: '#19C37D',
+      confirmButtonColor: '#44B78B',
+      cancelButtonColor: '#d33',
+
       
       preConfirm: () => {
         const titulo = Swal.getPopup().querySelector('#titulo').value;
@@ -119,8 +122,10 @@ function AdicionarFixada() {
       showCancelButton: true,
       confirmButtonText: 'Enviar',
       showLoaderOnConfirm: true,
-      background: '#343541',
-      confirmButtonColor: '#19C37D',
+      background: '#121212',
+      confirmButtonColor: '#44B78B',
+      cancelButtonColor: '#d33',
+
       
       preConfirm: () => {
         const titulo = Swal.getPopup().querySelector('#titulo').value;
@@ -144,8 +149,8 @@ function EditarFixada(id, titulo) {
       showCancelButton: true,
       confirmButtonText: 'Renomear',
       showLoaderOnConfirm: true,
-      background: '#343541',
-      confirmButtonColor: '#19C37D',
+      background: '#121212',
+      confirmButtonColor: '#44B78B',
       cancelButtonColor: '#d33',
       preConfirm: () => {
         const novoTitulo = Swal.getPopup().querySelector('#titulo').value;
@@ -167,11 +172,12 @@ function DescricaoFixada(titulo, data, descricao) {
       html: `<p style="color: grey">${descricao}</p><p style="color: white">Data: <span style="color: #19C37D">${data}</span></p>`,
       iconColor: '#19C37D',
       confirmButtonText: 'Ok',
-      confirmButtonColor: '#19C37D',
+      confirmButtonColor: '#44B78B',
+      
       customClass: {
           confirmButton: 'custom-confirm-button'
       },
-      background: '#343541'
+      background: '#121212'
     });
 }
 
@@ -180,9 +186,9 @@ function DeletarFixada(id) {
         title: '<p style="color: white; font-family: Arial;">Você tem certeza?</p>',
         html: '<p style="color: grey; font-family: Arial;">Não será possível reverter</p>',
         iconColor: '#d33',
-        background: '#343541',
+        background: '#121212',
         showCancelButton: true,
-        confirmButtonColor: '#19C37D',
+        confirmButtonColor: '#44B78B',
         cancelButtonColor: '#d33',
         confirmButtonText: 'Sim, Deletar!',
       }).then((result) => {
@@ -226,9 +232,9 @@ function DeletarLista(id) {
       title: '<p style="color: white; font-family: Arial;">Você tem certeza?</p>',
       html: '<p style="color: grey; font-family: Arial;">Não será possível reverter</p>',
       iconColor: '#d33',
-      background: '#343541',
+      background: '#121212',
       showCancelButton: true,
-      confirmButtonColor: '#19C37D',
+      confirmButtonColor: '#44B78B',
       cancelButtonColor: '#d33',
       confirmButtonText: 'Sim, Deletar!',
     }).then((result) => {
@@ -254,11 +260,11 @@ function DescricaoLista(titulo, data, descricao) {
         html: `<p style="color: grey">${descricao}</p><p style="color: white">Data: <span style="color: #19C37D">${data}</span></p>`,
         iconColor: '#19C37D',
         confirmButtonText: 'Ok',
-        confirmButtonColor: '#19C37D',
+        confirmButtonColor: '#44B78B',
         customClass: {
             confirmButton: 'custom-confirm-button'
         },
-        background: '#343541'
+        background: '#121212'
     });
 }
 
@@ -269,8 +275,8 @@ function EditarLista(id, titulo) {
     showCancelButton: true,
     confirmButtonText: 'Renomear',
     showLoaderOnConfirm: true,
-    background: '#343541',
-    confirmButtonColor: '#19C37D',
+    background: '#121212',
+    confirmButtonColor: '#44B78B',
     cancelButtonColor: '#d33',
     preConfirm: () => {
       const novoTitulo = Swal.getPopup().querySelector('#titulo').value;
@@ -296,8 +302,9 @@ function AdicionarTarefa(id) {
       showCancelButton: true,
       confirmButtonText: 'Enviar',
       showLoaderOnConfirm: true,
-      background: '#343541',
-      confirmButtonColor: '#19C37D',
+      background: '#121212',
+      confirmButtonColor: '#44B78B',
+      cancelButtonColor: '#d33',
       preConfirm: () => {
         const titulo = Swal.getPopup().querySelector('#titulo').value;
         const descricao = Swal.getPopup().querySelector('#descricao').value;
